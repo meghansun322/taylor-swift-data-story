@@ -32,6 +32,7 @@ function showBarChart(selectedVar) {
     .transition()
     .duration(1000)
     .call(d3.axisBottom(x1))
+    .style("opacity", 1)
     .selectAll("text")
     .attr("transform", "translate(-10,0)rotate(-45)")
     .style("text-anchor", "end");
@@ -51,7 +52,9 @@ function showBarChart(selectedVar) {
     .style("opacity", 1);
 
   // Show Buttons
-  d3.selectAll("#bar-button").style("display", "inline-block");
+  d3.selectAll("#bar-button")
+    .style("display", "inline-block")
+    .style("opacity", 1);
 
   // variable u: map data to existing bars
   var u = bar_chart_anchor.selectAll("rect").data(tourData);
