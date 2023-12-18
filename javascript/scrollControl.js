@@ -1,4 +1,4 @@
-// using d3 for convenience
+// Setup Using d3
 var main = d3.select("main");
 var scrolly = main.select("#scrolly");
 var figure = scrolly.select("figure");
@@ -7,7 +7,7 @@ var step = article.selectAll(".step");
 
 // initialize the scrollama
 var scroller = scrollama();
-var isMapSetup = false;
+
 // Tracks if scroll up happens
 var previousIndex = -1;
 
@@ -56,7 +56,7 @@ function handleStepEnter(response) {
       }
       break;
     case 4:
-      updateGraph("Revenue");
+      showBarChart("Revenue");
       break;
     case 5:
       if (previousIndex == 6) {
@@ -74,7 +74,6 @@ function handleStepEnter(response) {
     default:
   }
   previousIndex = currentIndex;
-  // update graphic based on step
 }
 
 function setupStickyfill() {

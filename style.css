@@ -38,7 +38,7 @@ p{
 }
 
   
-  #scrolly {
+#scrolly {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -200,7 +200,6 @@ p.seperator{
 
 .scroll_text{
   text-align: center;
- 
   font-size: 16px;
   font-weight: bold; 
 }

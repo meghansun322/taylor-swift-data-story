@@ -1,3 +1,5 @@
+// Loads CSV Data From Data Sets and Stores in Variables
+
 let julyDataset;
 var taylorJulyDataset;
 let octoberDataset;

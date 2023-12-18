@@ -1,5 +1,25 @@
+/// MAP STREAMS SETUP - Global ///
 var hasMapFeatureBeenSetup = false;
+var mapAnchor = svg.append("g").attr("class", "streamsMap");
 
+var projection = d3
+  .geoMercator()
+  .center([4, 47]) // GPS of location to zoom on
+  .scale(125) // This is like the zoom
+  .translate([width / 2 + 20, height / 2 - margin.top + 20]);
+
+var Tooltip = d3
+  .select("#chart")
+  .append("div")
+  .attr("class", "tooltip")
+  .style("opacity", 1)
+  .style("background-color", "white")
+  .style("border", "solid")
+  .style("border-width", "2px")
+  .style("border-radius", "5px")
+  .style("padding", "5px");
+
+/// FUNCTION: Displays Stream Map Visualization
 function showMap() {
   if (!hasMapFeatureBeenSetup) {
     hasMapFeatureBeenSetup = true;
@@ -111,6 +131,7 @@ function showMap() {
     .duration(1000);
 }
 
+/// FUNCTION: Hides Map
 function hideMap() {
   svg.select(".streamsMap").transition().duration(1000).style("opacity", 0);
   d3.select(".tooltip").transition().duration(1000).style("opacity", 0);

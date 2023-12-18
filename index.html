@@ -5,7 +5,7 @@
     <title>Peak Now Remix (Taylor's Version)</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="src/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="libraries/bootstrap.min.css" />
 </head>
 
 <body id="body">
@@ -141,6 +141,9 @@
 
                         <br>
                         <br>
+                        Hover over dots to see streams in each country.
+                        <br>
+                        <br>
                         <span class="source">Source: Tableau Data by Septi Sarawati <a
                                 href="https://saraswatisepti.com/2022/10/taylor-swift-data-analysis-is-taylor-swifts-song-making-your-mood/">https://saraswatisepti.com/2022/10/taylor-swift-data-analysis-is-taylor-swifts-song-making-your-mood/</a></span>
                     </p>
@@ -178,9 +181,9 @@
                 <div id="chart">
                     <div class="buttons">
                         <button type="button" id="bar-button" class="btn btn-outline-info"
-                            onclick="updateGraph('Revenue')">Revenue</button>
+                            onclick="showBarChart('Revenue')">Revenue</button>
                         <button type="button" id="bar-button" class="btn btn-outline-info bar-button"
-                            onclick="updateGraph('Attendance')">Attendance</button>
+                            onclick="showBarChart('Attendance')">Attendance</button>
                     </div>
                 </div>
                 <div id="tooltip"></div>
@@ -188,14 +191,14 @@
         </section>
     </main>
     <script src="https://d3js.org/d3.v6.js"></script>
-    <script src="src/stickyfill.min.js"></script>
-    <script src="src/scrollama.min.js"></script>
+    <script src="libraries/stickyfill.min.js"></script>
+    <script src="libraries/scrollama.min.js"></script>
+    <script src="javascript/d3Setup.js"></script>
+    <script src="javascript/loadData.js"></script>
     <script src="javascript/visualizations/barGraph.js"></script>
     <script src="javascript/visualizations/streamsMap.js"></script>
     <script src="javascript/visualizations/grid.js"></script>
-    <script src="javascript/d3Setup.js"></script>
     <script src="javascript/scrollControl.js"></script>
-    <script src="javascript/loadData.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"
         integrity="sha512-wNH6xsp2n8CfB91nrBtfc4sfLwYPBMjSWVUwQOp60AYYXH6i8yCwuKFZ4rgK2i6pQek/b+bSyR7b01/922IBzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

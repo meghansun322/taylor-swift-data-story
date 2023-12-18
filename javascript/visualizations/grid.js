@@ -1,8 +1,18 @@
-// July Top 200 Billboard Grid
+/// BILLBOARD SETUP - Global ///
+var billboardGridAnchor = svg
+  .append("g")
+  .attr("class", "billboardChart")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// Billboard Grid Visualization x and y axis scales
+var y = d3.scaleBand().range([0, 300]).domain(d3.range(gridRows));
+var x = d3.scaleBand().range([0, 700]).domain(d3.range(gridCols));
+
+// FUNCTION: July Top 200 Billboard Grid
 function showJulyBillboardGrid() {
   buildBillboardGrid(julyDataset);
 
-  billboard
+  billboardGridAnchor
     .selectAll(".circle-data")
     .transition()
     .duration(1000)
@@ -11,15 +21,15 @@ function showJulyBillboardGrid() {
     .style("fill", COLOR._1989_BLUE);
 }
 
+// FUNCTION: October 2023 Top 200 Billboard Grid
 function currrentBillboardGrid() {
   buildBillboardGrid(octoberDataset);
 
-  billboard
+  billboardGridAnchor
     .selectAll("circle")
     .transition()
     .duration(1000)
     .delay(100)
-
     .style("stroke", function (d) {
       return d.artist == "Taylor Swift"
         ? COLOR._MIDNIGHTS_NAVY
@@ -32,10 +42,11 @@ function currrentBillboardGrid() {
     });
 }
 
+// FUNCTION: July Top 200 Billboard Grid Highlighting Taylor
 function taylorInChart() {
   buildBillboardGrid(julyDataset);
 
-  billboard
+  billboardGridAnchor
     .selectAll(".circle-data")
     .transition()
     .duration(1000)
@@ -52,11 +63,22 @@ function taylorInChart() {
     });
 }
 
-// Helper to Build Billboard Grid
+// FUNCTION: Hides Billboard Visualization
+function hideBillboard() {
+  d3.selectAll(".circle-data")
+    .transition()
+    .duration(2000)
+    .style("opacity", 0)
+    .remove();
+  d3.select(".billboardChart").transition().duration(2000).style("opacity", 0);
+}
+
+// HELPER FUNCTION: to Build Billboard Grid
 function buildBillboardGrid(data) {
   d3.select(".billboardChart").transition().duration(2000).style("opacity", 1);
+
   // creates circle data points
-  billboard
+  billboardGridAnchor
     .selectAll("circle")
     .data(data)
     .enter()
@@ -67,10 +89,10 @@ function buildBillboardGrid(data) {
     })
     .attr("cx", function (d) {
       console.log(d.rank + d.title);
-      return x((d.rank - 1) % numCols);
+      return x((d.rank - 1) % gridCols);
     })
     .attr("cy", function (d) {
-      return y(Math.floor((d.rank - 1) / numCols));
+      return y(Math.floor((d.rank - 1) / gridCols));
     })
     .attr("r", 8)
     .style("opacity", 1)
@@ -80,15 +102,7 @@ function buildBillboardGrid(data) {
     .on("mouseleave", mouseOut);
 }
 
-function hideBillboard() {
-  d3.selectAll(".circle-data")
-    .transition()
-    .duration(2000)
-    .style("opacity", 0)
-    .remove();
-  d3.select(".billboardChart").transition().duration(2000).style("opacity", 0);
-}
-// Helper Function for Mouse movement
+// HELPER FUNCTION: for Mouse Over movement
 function mouseOver(e, d) {
   d3.select(this)
     .attr("opacity", 1)
@@ -105,6 +119,7 @@ function mouseOver(e, d) {
                       <br> ${d.artist}`);
 }
 
+// HELPER FUNCTION: for Mouse Out Movement
 function mouseOut(e, d) {
   d3.select("#tooltip").style("display", "none");
 
