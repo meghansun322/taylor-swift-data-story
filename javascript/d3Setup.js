@@ -13,9 +13,9 @@ const COLOR = {
   _MIDNIGHTS_NAVY: "#464D60",
 };
 
-const margin = { top: 60, right: 30, bottom: 70, left: 60 },
+const margin = { top: 40, right: 30, bottom: 70, left: 80 },
   width = 800 - margin.left - margin.right,
-  height = 600 - margin.top - margin.bottom;
+  height = 800 - margin.top - margin.bottom;
 
 //10 rows and 10 columns
 var numRows = 10;
@@ -31,7 +31,21 @@ var svg = d3
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom);
 
-var g = svg.append("g");
+var billboard = svg
+  .append("g")
+  .attr("class", "billboardChart")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+bar_width = 460 - margin.left - margin.right;
+bar_height = 400 - margin.top - margin.bottom;
+bar_margin_left = 120;
+
+// var barChartAnchor = svg
+//   .append("g")
+//   .attr("class", "barChart")
+//   .attr("width", bar_width / 2 + margin.left + margin.right)
+//   .attr("height", bar_height / 3 + bar_margin_left + margin.bottom);
+
 var xAxis = svg
   .append("g")
   .attr("class", "myXaxis")
@@ -44,3 +58,24 @@ var yAxis = svg
   .append("g")
   .attr("class", "myYaxis")
   .attr("transform", "translate(200,0)");
+
+var mapAnchor = svg.append("g").attr("class", "streamsMap");
+
+var projection = d3
+  .geoMercator()
+  .center([4, 47]) // GPS of location to zoom on
+  .scale(130) // This is like the zoom
+  .translate([width / 2, height / 2]);
+
+d3.select(".streamsMap").transition().duration(2000).style("opacity", 1);
+
+var Tooltip = d3
+  .select("#chart")
+  .append("div")
+  .attr("class", "tooltip")
+  .style("opacity", 1)
+  .style("background-color", "white")
+  .style("border", "solid")
+  .style("border-width", "2px")
+  .style("border-radius", "5px")
+  .style("padding", "5px");

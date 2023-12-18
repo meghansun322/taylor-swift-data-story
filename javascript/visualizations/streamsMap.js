@@ -1,34 +1,25 @@
+var hasMapFeatureBeenSetup = false;
+
 function showMap() {
-  var projection = d3
-    .geoMercator()
-    .center([4, 47]) // GPS of location to zoom on
-    .scale(110) // This is like the zoom
-    .translate([width / 2, height / 2]);
-
-  d3.select("svg")
-    .append("g")
-    .attr("class", "legendOrdinal")
-    .selectAll("path")
-    .data(worldMapData.features)
-    .enter()
-    .append("path")
-    .attr("fill", "#b8b8b8")
-    .attr("d", d3.geoPath().projection(projection))
-    .style("stroke", "black")
-    .style("opacity", 0.3)
-    .transition()
-    .duration(1000);
-
-  var Tooltip = d3
-    .select("#chart")
-    .append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 1)
-    .style("background-color", "white")
-    .style("border", "solid")
-    .style("border-width", "2px")
-    .style("border-radius", "5px")
-    .style("padding", "5px");
+  if (!hasMapFeatureBeenSetup) {
+    hasMapFeatureBeenSetup = true;
+    d3.select(".streamsMap")
+      .append("g")
+      .attr("class", "legendOrdinal")
+      .selectAll("path")
+      .data(worldMapData.features)
+      .enter()
+      .append("path")
+      .style("opacity", 0)
+      .transition()
+      .duration(1000)
+      .attr("fill", "#b8b8b8")
+      .attr("d", d3.geoPath().projection(projection))
+      .style("stroke", "black")
+      .style("opacity", 0.3);
+  }
+  svg.select(".streamsMap").transition().duration(1000).style("opacity", 1);
+  d3.select(".tooltip").transition().duration(1000).style("opacity", 1);
 
   var mouseover = function (e, d) {
     Tooltip.style("opacity", 1);
@@ -65,13 +56,13 @@ function showMap() {
     .shapePadding(10)
     .scale(ordinal);
   console.log("legend" + legendOrdinal);
-  svg
+  mapAnchor
     .select(".legendOrdinal")
     .attr("transform", "translate(20,20)")
     .call(legendOrdinal);
   //Add circles:
-  svg
-    .selectAll("myCircles")
+  mapAnchor
+    .selectAll(".circle")
     .data(markers)
     .enter()
     .append("circle")
@@ -116,14 +107,12 @@ function showMap() {
     .attr("stroke-width", 3)
     .attr("fill-opacity", 0.4)
     .on("mouseover", mouseover)
-    .on("mouseleave", mouseleave);
+    .on("mouseleave", mouseleave)
+    .transition()
+    .duration(1000);
 }
 
 function hideMap() {
-  d3.select("svg").transition().duration(1000).style("opacity", 0).remove();
-  d3.select(".tooltip")
-    .transition()
-    .duration(1000)
-    .style("opacity", 0)
-    .remove();
+  svg.select(".streamsMap").transition().duration(1000).style("opacity", 0);
+  d3.select(".tooltip").transition().duration(1000).style("opacity", 0);
 }

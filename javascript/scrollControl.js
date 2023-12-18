@@ -7,6 +7,9 @@ var step = article.selectAll(".step");
 
 // initialize the scrollama
 var scroller = scrollama();
+var isMapSetup = false;
+// Tracks if scroll up happens
+var previousIndex = -1;
 
 // generic window resize listener event
 function handleResize() {
@@ -46,13 +49,21 @@ function handleStepEnter(response) {
       currrentBillboardGrid();
       break;
     case 3:
-      hideBillboard();
+      if (previousIndex == 4) {
+        hideBarChart();
+      } else {
+        hideBillboard();
+      }
       break;
     case 4:
       updateGraph("Revenue");
       break;
     case 5:
-      hideBarChart();
+      if (previousIndex == 6) {
+        hideMap();
+      } else {
+        hideBarChart();
+      }
       break;
     case 6:
       showMap();
@@ -62,6 +73,7 @@ function handleStepEnter(response) {
       break;
     default:
   }
+  previousIndex = currentIndex;
   // update graphic based on step
 }
 
