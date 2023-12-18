@@ -12,7 +12,7 @@ A d3.js data visualzation story about Taylor Swift's lastest success in 2023. Th
 #### [d3.js](https://d3js.org/), [scrollma.js](https://github.com/russellsamora/scrollama), [bootstrap](https://getbootstrap.com/)
 
 ## Credit Resources Used
-#### [How I Created an Interactive, Scrolling Visualisation with D3.js, and how you can too](https://towardsdatascience.com/how-i-created-an-interactive-scrolling-visualisation-with-d3-js-and-how-you-can-too-e116372e2c73)
-#### [So You Want to Build A Scroller](https://vallandingham.me/scroller.html)
+#### How I Created an Interactive, Scrolling Visualisation with D3.js, and how you can too: [Link](https://towardsdatascience.com/how-i-created-an-interactive-scrolling-visualisation-with-d3-js-and-how-you-can-too-e116372e2c73)
+#### So You Want to Build A Scroller: [Link](https://vallandingham.me/scroller.html)
 ## Notes
 Individual Assignment for Visualization Design Methods - Fall 2023
