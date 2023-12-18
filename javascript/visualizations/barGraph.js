@@ -94,11 +94,7 @@ function hideBarChart() {
 // }
 
 function updateGraph(selectedVar) {
-  bar_width = 460 - margin.left - margin.right;
-  bar_height = 400 - margin.top - margin.bottom;
-  bar_margin_left = 120;
-
-  svg.attr("class", "barChart");
+  // svg.attr("class", "barChart");
   // .attr("width", bar_width / 2 + margin.left + margin.right)
   // .attr("height", bar_height / 3 + bar_margin_left + margin.bottom)
 
@@ -135,8 +131,9 @@ function updateGraph(selectedVar) {
     .style("opacity", 1);
 
   d3.selectAll("#bar-button").style("display", "inline-block");
+
   // variable u: map data to existing bars
-  var u = svg.selectAll("rect").data(tourData);
+  var u = barChartAnchor.selectAll("rect").data(tourData);
 
   // update bars
   u.enter()
@@ -166,7 +163,7 @@ function updateGraph(selectedVar) {
           return "blue";
       }
     })
-    .attr("transform", "translate(200, 0)")
+    .attr("transform", "translate(200," + margin.top / 3 + ")")
     .transition()
     .duration(800)
     .attr("y", function (d) {

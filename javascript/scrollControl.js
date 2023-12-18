@@ -22,7 +22,7 @@ function handleResize() {
 
   figure
     .style("height", figureHeight + "px")
-    .style("top", figureMarginTop - 50 + "px");
+    .style("top", figureMarginTop - 80 + "px");
 
   // 3. tell scrollama to update new element dimensions
   scroller.resize();
