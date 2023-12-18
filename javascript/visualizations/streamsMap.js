@@ -55,7 +55,6 @@ function showMap() {
     .shape("path", d3.symbol().type(d3.symbolCircle).size(100)())
     .shapePadding(10)
     .scale(ordinal);
-  console.log("legend" + legendOrdinal);
   mapAnchor
     .select(".legendOrdinal")
     .attr("transform", "translate(20,20)")

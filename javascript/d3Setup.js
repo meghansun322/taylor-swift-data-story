@@ -64,8 +64,8 @@ var mapAnchor = svg.append("g").attr("class", "streamsMap");
 var projection = d3
   .geoMercator()
   .center([4, 47]) // GPS of location to zoom on
-  .scale(130) // This is like the zoom
-  .translate([width / 2, height / 2]);
+  .scale(125) // This is like the zoom
+  .translate([width / 2, height / 2 - 90]);
 
 d3.select(".streamsMap").transition().duration(2000).style("opacity", 1);
 

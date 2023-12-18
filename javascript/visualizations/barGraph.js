@@ -97,7 +97,7 @@ function updateGraph(selectedVar) {
   bar_width = 460 - margin.left - margin.right;
   bar_height = 400 - margin.top - margin.bottom;
   bar_margin_left = 120;
-  svg;
+
   svg.attr("class", "barChart");
   // .attr("width", bar_width / 2 + margin.left + margin.right)
   // .attr("height", bar_height / 3 + bar_margin_left + margin.bottom)
