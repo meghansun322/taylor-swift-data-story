@@ -32,12 +32,12 @@ function currrentBillboardGrid() {
     .delay(100)
     .style("stroke", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._MIDNIGHTS_NAVY
+        ? COLOR._SPEAKNOW_PURPLE
         : COLOR._1989_BLUE;
     })
     .style("fill", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._MIDNIGHTS_NAVY
+        ? COLOR._SPEAKNOW_PURPLE
         : COLOR._1989_BLUE;
     });
 }
@@ -53,12 +53,12 @@ function taylorInChart() {
     .delay(100)
     .style("stroke", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._MIDNIGHTS_NAVY
+        ? COLOR._SPEAKNOW_PURPLE
         : COLOR._1989_BLUE;
     })
     .style("fill", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._MIDNIGHTS_NAVY
+        ? COLOR._SPEAKNOW_PURPLE
         : COLOR._1989_BLUE;
     });
 }
