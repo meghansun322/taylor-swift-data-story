@@ -32,12 +32,12 @@ function currrentBillboardGrid() {
     .delay(100)
     .style("stroke", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._SPEAKNOW_PURPLE
+        ? COLOR._ACCENT_COLOR
         : COLOR._1989_BLUE;
     })
     .style("fill", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._SPEAKNOW_PURPLE
+        ? COLOR._ACCENT_COLOR
         : COLOR._1989_BLUE;
     });
 }
@@ -53,12 +53,12 @@ function taylorInChart() {
     .delay(100)
     .style("stroke", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._SPEAKNOW_PURPLE
+        ? COLOR._ACCENT_COLOR
         : COLOR._1989_BLUE;
     })
     .style("fill", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._SPEAKNOW_PURPLE
+        ? COLOR._ACCENT_COLOR
         : COLOR._1989_BLUE;
     });
 }
@@ -88,7 +88,6 @@ function buildBillboardGrid(data) {
       return "id" + d.title;
     })
     .attr("cx", function (d) {
-      console.log(d.rank + d.title);
       return x((d.rank - 1) % gridCols);
     })
     .attr("cy", function (d) {

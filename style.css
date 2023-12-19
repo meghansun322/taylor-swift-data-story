@@ -13,6 +13,9 @@
   --midnights-navy: #464D60;
 
   --font: "Neue Haas Grotesk Display Pro", sans-serif; 
+  --main-color: #1F2E43;
+  --accent-color: #E0EDFD;
+
 }
 
 * {
@@ -31,7 +34,13 @@ p {
   margin-bottom: 25px;
   font-size: large;
 }
+.main {
+  color: var(--main-color);
+}
 
+.accent {
+  color: var(--accent-color);
+}
 section#introduction {
   margin: 0 auto;
   font-size: medium;
@@ -51,7 +60,8 @@ section#introduction {
 }
 
 section#visualizations {
-  background: rgba(34, 41, 69, 1);
+  background: var(--main-color);
+ 
   position: relative;
   margin-top: 40%;
   padding-top: 100px;
@@ -66,7 +76,6 @@ section#visualizations {
 
 article {
   position: relative;
-  padding: 0 1rem;
   margin-top: 160px;
   color: white;
 
@@ -79,7 +88,7 @@ article {
   }
   
   .step p {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
@@ -133,10 +142,33 @@ button {
 
 h2 {
   font-weight: 800 !important; 
+  font-size: 1.85rem !important;
 }
 
-h3, h4, h5, p {
+h3, h4, h5, h6, p {
   font-weight: 600 !important; 
+}
+
+.color-toggle{
+  display: flex;
+  flex-direction:row;
+
+  .btn-circle.btn-xl {
+    width: 25px;
+    height: 25px;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px;
+  }
+}
+
+
+
+/* BAR CHART AXIS CLASSES */
+.barXaxis, .barXaxis path, .barYaxis , .barYaxis path, line{
+  stroke: white;
 }
 
 /* HELPER CLASSES */
@@ -201,4 +233,49 @@ h3, h4, h5, p {
 
 .yellow {
   color: var(--fearless-yellow)
+}
+
+#btn-1989{
+  background: #D1F3FF !important; 
+}
+
+#btn-lover{
+  background:#FBB3D1!important; 
+}
+
+#btn-folklore {
+  background:  #D5D5D5!important; 
+}
+
+#btn-evermore {
+  background: #2E2327!important; 
+}
+
+#btn-midnights {
+  background:  #1F2E43 !important;
+}
+
+#btn-red {
+  background: #72333C;
+}
+
+#btn-speaknow{
+  background: #D6BADC;
+}
+
+#btn-fearless {
+  background: #FDDAA6;
+}
+
+#btn-debut {
+  background: #A9CBAA;
+}
+
+#btn-reputation {
+  background: #000003;
+}
+
+.color-picker-container {
+  padding: 50px 0;
+  left: 0;
 }
