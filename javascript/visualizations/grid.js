@@ -17,8 +17,9 @@ function showJulyBillboardGrid() {
     .transition()
     .duration(1000)
     .delay(100)
-    .style("stroke", COLOR._MAIN_COLOR)
-    .style("fill", COLOR._MAIN_COLOR);
+    .style("stroke", COLOR._LIGHT_ACCENT_COLOR)
+    .style("fill", COLOR._LIGHT_ACCENT_COLOR)
+    .style("opacity", 1);
 }
 
 // FUNCTION: October 2023 Top 200 Billboard Grid
@@ -32,14 +33,15 @@ function currrentBillboardGrid() {
     .delay(100)
     .style("stroke", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._ACCENT_COLOR
-        : COLOR._MAIN_COLOR;
+        ? COLOR._DARK_ACCENT_COLOR
+        : COLOR._LIGHT_ACCENT_COLOR;
     })
     .style("fill", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._ACCENT_COLOR
-        : COLOR._MAIN_COLOR;
-    });
+        ? COLOR._DARK_ACCENT_COLOR
+        : COLOR._LIGHT_ACCENT_COLOR;
+    })
+    .style("opacity", 1);
 }
 
 // FUNCTION: July Top 200 Billboard Grid Highlighting Taylor
@@ -53,14 +55,15 @@ function taylorInChart() {
     .delay(100)
     .style("stroke", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._ACCENT_COLOR
-        : COLOR._MAIN_COLOR;
+        ? COLOR._DARK_ACCENT_COLOR
+        : COLOR._LIGHT_ACCENT_COLOR;
     })
     .style("fill", function (d) {
       return d.artist == "Taylor Swift"
-        ? COLOR._ACCENT_COLOR
-        : COLOR._MAIN_COLOR;
-    });
+        ? COLOR._DARK_ACCENT_COLOR
+        : COLOR._LIGHT_ACCENT_COLOR;
+    })
+    .style("opacity", 1);
 }
 
 // FUNCTION: Hides Billboard Visualization
@@ -94,9 +97,9 @@ function buildBillboardGrid(data) {
       return y(Math.floor((d.rank - 1) / gridCols));
     })
     .attr("r", 8)
-    .style("opacity", 1)
-    .style("stroke", COLOR._1989_BLUE)
-    .style("fill", COLOR._1989_BLUE)
+    .style("opacity", 0)
+    .style("stroke", COLOR._LIGHT_ACCENT_COLOR)
+    .style("fill", COLOR._LIGHT_ACCENT_COLOR)
     .on("mouseover", mouseOver)
     .on("mouseleave", mouseOut);
 }
