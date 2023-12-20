@@ -13,15 +13,19 @@
   --midnights-navy: #464D60;
 
   --font: "Neue Haas Grotesk Display Pro", sans-serif; 
-  --main-color: #1F2E43;
-  --accent-color: #E0EDFD;
 
+  /* Default Colors (Midnights) */
+  --background-color: #F5F9FF;
+  --primary-color: #2A2F5A;
+  --primary-accent-color: #4F4A8E;
+  --secondary-accent-color: #C6D0E1; 
 }
 
 * {
   box-sizing: border-box;
   font-family: var(--font) !important;
   line-height: 1.5;
+  
 }
 
 html,
@@ -35,11 +39,15 @@ p {
   font-size: large;
 }
 .main {
-  color: var(--main-color);
+  color: var(--primary-color);
 }
 
 .accent {
-  color: var(--accent-color);
+  color: var(--primary-accent-color);
+}
+
+.accent-2{
+  color: var(--secondary-accent-color)
 }
 section#introduction {
   margin: 0 auto;
@@ -60,7 +68,7 @@ section#introduction {
 }
 
 section#visualizations {
-  background: var(--main-color);
+  background: var(--background-color);
  
   position: relative;
   margin-top: 40%;
@@ -77,7 +85,7 @@ section#visualizations {
 article {
   position: relative;
   margin-top: 160px;
-  color: white;
+  color: black;
 
   .step {
     margin: 25px 0;
@@ -160,17 +168,58 @@ h3, h4, h5, h6, p {
     border-radius: 50%;
     font-size: 15px;
     text-align: center;
-    margin: 10px;
+    margin: 10px 20px 10px 0;
   }
 }
-
-
-
-/* BAR CHART AXIS CLASSES */
-.barXaxis, .barXaxis path, .barYaxis , .barYaxis path, line{
-  stroke: white;
+#_1989{
+  background: #D1F3FF !important; 
 }
 
+#lover{
+  background:#FBB3D1!important; 
+}
+
+#folklore {
+  background:  #D5D5D5!important; 
+}
+
+#evermore {
+  background: #2E2327!important; 
+}
+
+#midnights {
+  background:  #1F2E43 !important;
+}
+
+#red {
+  background: #72333C !important;
+}
+
+#speaknow{
+  background: #D6BADC !important;
+}
+
+#fearless {
+  background: #FDDAA6 !important;
+}
+
+#debut {
+  background: #c7ddc8 !important;
+}
+
+#reputation {
+  background: #000003 !important;
+}
+
+#all {
+  background: #BDCFB7;
+background: linear-gradient(to right, #BDCFB7 0%, #E8C490 26%, #C69AD1 61%, #B2DCF4 100%, #23538A 100%);
+}
+
+.theme-selector-container {
+  padding: 50px 0;
+  left: 0;
+}
 /* HELPER CLASSES */
 .title-lg {
   font-size: 50px;
@@ -202,80 +251,4 @@ h3, h4, h5, h6, p {
 
 .extrabold{
   font-weight: 800;
-}
-.purple {
-  color: var(--speaknow-purple)
-}
-
-.blue {
-  color: var(--1989-blue)
-}
-
-.navy {
-  color: var(--midnights-navy)
-}
-
-.pink {
-  color: var(--lover-pink)
-}
-
-.red {
-  color: var(--red-maroon)
-}
-
-.green {
-  color: var(--debut-green)
-}
-
-.brown {
-  color: var(--evermore-brown)
-}
-
-.yellow {
-  color: var(--fearless-yellow)
-}
-
-#btn-1989{
-  background: #D1F3FF !important; 
-}
-
-#btn-lover{
-  background:#FBB3D1!important; 
-}
-
-#btn-folklore {
-  background:  #D5D5D5!important; 
-}
-
-#btn-evermore {
-  background: #2E2327!important; 
-}
-
-#btn-midnights {
-  background:  #1F2E43 !important;
-}
-
-#btn-red {
-  background: #72333C;
-}
-
-#btn-speaknow{
-  background: #D6BADC;
-}
-
-#btn-fearless {
-  background: #FDDAA6;
-}
-
-#btn-debut {
-  background: #A9CBAA;
-}
-
-#btn-reputation {
-  background: #000003;
-}
-
-.color-picker-container {
-  padding: 50px 0;
-  left: 0;
 }

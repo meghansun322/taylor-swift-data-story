@@ -12,8 +12,8 @@ const COLOR = {
   _EVERMORE_BROWN: "#CC9D83",
   _MIDNIGHTS_NAVY: "#464D60",
 
-  _MAIN_COLOR: "#b2dcf4",
-  _ACCENT_COLOR: "#f5f1f1",
+  _LIGHT_ACCENT_COLOR: "#C6D0E1",
+  _DARK_ACCENT_COLOR: "#4F4A8E",
 };
 
 const margin = { top: 90, right: 30, bottom: 90, left: 80 },

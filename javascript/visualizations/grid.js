@@ -17,8 +17,8 @@ function showJulyBillboardGrid() {
     .transition()
     .duration(1000)
     .delay(100)
-    .style("stroke", COLOR._1989_BLUE)
-    .style("fill", COLOR._1989_BLUE);
+    .style("stroke", COLOR._MAIN_COLOR)
+    .style("fill", COLOR._MAIN_COLOR);
 }
 
 // FUNCTION: October 2023 Top 200 Billboard Grid
@@ -33,12 +33,12 @@ function currrentBillboardGrid() {
     .style("stroke", function (d) {
       return d.artist == "Taylor Swift"
         ? COLOR._ACCENT_COLOR
-        : COLOR._1989_BLUE;
+        : COLOR._MAIN_COLOR;
     })
     .style("fill", function (d) {
       return d.artist == "Taylor Swift"
         ? COLOR._ACCENT_COLOR
-        : COLOR._1989_BLUE;
+        : COLOR._MAIN_COLOR;
     });
 }
 
@@ -54,12 +54,12 @@ function taylorInChart() {
     .style("stroke", function (d) {
       return d.artist == "Taylor Swift"
         ? COLOR._ACCENT_COLOR
-        : COLOR._1989_BLUE;
+        : COLOR._MAIN_COLOR;
     })
     .style("fill", function (d) {
       return d.artist == "Taylor Swift"
         ? COLOR._ACCENT_COLOR
-        : COLOR._1989_BLUE;
+        : COLOR._MAIN_COLOR;
     });
 }
 
