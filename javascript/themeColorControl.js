@@ -3,7 +3,6 @@ let themeButtons = document.querySelectorAll(".theme-buttons");
 themeButtons.forEach((color) => {
   color.addEventListener("click", () => {
     // Retrieve color information from attributes
-    let dataBackgroundColor = color.getAttribute("data-background-color");
     let dataPrimaryColor = color.getAttribute("data-primary-color");
     let dataPrimaryAccentColor = color.getAttribute(
       "data-primary-accent-color"
@@ -17,10 +16,6 @@ themeButtons.forEach((color) => {
       .querySelector(":root")
       .style.setProperty("--secondary-accent-color", dataSeondaryAccentColor);
 
-    // TODO: IF I WANT VISUALIZATION BACKGROUND TO CHANGE IN FUTURE
-    // document
-    //   .querySelector(":root")
-    //   .style.setProperty("--background-color", dataBackgroundColor);
     document
       .querySelector(":root")
       .style.setProperty("--primary-accent-color", dataPrimaryAccentColor);
