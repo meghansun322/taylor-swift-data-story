@@ -1,5 +1,18 @@
 @import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro');
 
+@font-face {
+  font-family: 'Rojal';
+  src: url('/assets/font/Rojal.eot');
+  src: url('/assets/font/Rojal.eot?#iefix') format('embedded-opentype'),
+      url('/assets/font/Rojal.woff2') format('woff2'),
+      url('/assets/font/Rojal.woff') format('woff'),
+      url('/assets/font/Rojal.ttf') format('truetype'),
+      url('/assets/font/Rojal.svg#Rojal') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --1989-blue: #b2dcf4;
   --speaknow-purple: #c69ad1;
@@ -12,10 +25,11 @@
   --evermore-brown: #CC9D83;
   --midnights-navy: #464D60;
 
-  --font: "Neue Haas Grotesk Display Pro", sans-serif; 
+  --header-font: 'Rojal';
+  --main-font: "Neue Haas Grotesk Display Pro", sans-serif; 
 
   /* Default Colors (Midnights) */
-  --background-color: #F5F9FF;
+  /* --background-color: #f5f1f1;  Not changing background for right now */ 
   --primary-color: #2A2F5A;
   --primary-accent-color: #4F4A8E;
   --secondary-accent-color: #C6D0E1; 
@@ -23,21 +37,27 @@
 
 * {
   box-sizing: border-box;
-  font-family: var(--font) !important;
   line-height: 1.5;
-  
+}
+
+.header {
+  font-family:  var(--header-font) !important;
+  letter-spacing: 2px;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--folklore-white) !important;
+  font-family: var(--main-font) !important;
 }
 
 p {
   margin-bottom: 25px;
   font-size: large;
 }
+
 .main {
   color: var(--primary-color);
 }
@@ -49,29 +69,29 @@ p {
 .accent-2{
   color: var(--secondary-accent-color)
 }
+
 section#introduction {
   margin: 0 auto;
   font-size: medium;
-  padding-top: 100px;
 
-  .container {
+   .container {
     padding: 30px;
     position: fixed;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    p {
-      color: var(--reputation-black)
-    }
+  p {
+    color: var(--reputation-black)
   }
+}
 }
 
 section#visualizations {
-  background: var(--background-color);
- 
-  position: relative;
+  background-color: var(--folklore-white);
+   position: relative;
   margin-top: 40%;
+
   padding-top: 100px;
 }
 
@@ -172,43 +192,43 @@ h3, h4, h5, h6, p {
   }
 }
 #_1989{
-  background: #D1F3FF !important; 
+  background: #789ac0 !important; 
 }
 
 #lover{
-  background:#FBB3D1!important; 
+  background:var(--lover-pink) !important; 
 }
 
 #folklore {
-  background:  #D5D5D5!important; 
+  background:  #b4b2b2 !important; 
 }
 
 #evermore {
-  background: #2E2327!important; 
+  background: var(--evermore-brown) !important; 
 }
 
 #midnights {
-  background:  #1F2E43 !important;
+  background:  var(--midnights-navy) !important;
 }
 
 #red {
-  background: #72333C !important;
+  background: var(--red-maroon) !important;
 }
 
 #speaknow{
-  background: #D6BADC !important;
+  background: var(--speaknow-purple) !important;
 }
 
 #fearless {
-  background: #FDDAA6 !important;
+  background: var(--fearless-yellow) !important;
 }
 
 #debut {
-  background: #c7ddc8 !important;
+  background: var(--debut-green) !important;
 }
 
 #reputation {
-  background: #000003 !important;
+  background: var(--reputation-black) !important;
 }
 
 #all {
@@ -217,14 +237,15 @@ background: linear-gradient(to right, #BDCFB7 0%, #E8C490 26%, #C69AD1 61%, #B2D
 }
 
 .theme-selector-container {
-  padding: 50px 0;
+  padding: 50px 0 30px 0;
   left: 0;
 }
 /* HELPER CLASSES */
 .title-lg {
-  font-size: 50px;
+  font-size: 110px;
   text-anchor: middle;
-  font-weight: 700;
+  text-transform: uppercase;
+  
 }
 
 .title-sm {

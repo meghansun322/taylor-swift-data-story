@@ -16,9 +16,11 @@ themeButtons.forEach((color) => {
     document
       .querySelector(":root")
       .style.setProperty("--secondary-accent-color", dataSeondaryAccentColor);
-    document
-      .querySelector(":root")
-      .style.setProperty("--background-color", dataBackgroundColor);
+
+    // TODO: IF I WANT VISUALIZATION BACKGROUND TO CHANGE IN FUTURE
+    // document
+    //   .querySelector(":root")
+    //   .style.setProperty("--background-color", dataBackgroundColor);
     document
       .querySelector(":root")
       .style.setProperty("--primary-accent-color", dataPrimaryAccentColor);
