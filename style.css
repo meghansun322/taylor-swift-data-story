@@ -21,15 +21,17 @@
   --red-maroon: #6D3D46;
   --reputation-black: #000003;
   --lover-pink: #EAB4CC;
-  --folklore-white: #f5f1f1;
+  --folklore-gray: #b4b2b2 ;
   --evermore-brown: #CC9D83;
   --midnights-navy: #464D60;
 
   --header-font: 'Rojal';
   --main-font: "Neue Haas Grotesk Display Pro", sans-serif; 
 
+
+  --background-color: #f5f1f1;
+  
   /* Default Colors (Midnights) */
-  /* --background-color: #f5f1f1;  Not changing background for right now */ 
   --primary-color: #2A2F5A;
   --primary-accent-color: #4F4A8E;
   --secondary-accent-color: #C6D0E1; 
@@ -49,7 +51,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--folklore-white) !important;
+  background-color: var(--background-color) !important;
   font-family: var(--main-font) !important;
 }
 
@@ -88,7 +90,7 @@ section#introduction {
 }
 
 section#visualizations {
-  background-color: var(--folklore-white);
+  background-color: var(--background-color);
    position: relative;
   margin-top: 40%;
 
@@ -200,7 +202,7 @@ h3, h4, h5, h6, p {
 }
 
 #folklore {
-  background:  #b4b2b2 !important; 
+  background: var(--folklore-gray) !important; 
 }
 
 #evermore {
