@@ -8,9 +8,12 @@ const COLOR = {
   _RED_MARRON: "#6D3D46",
   _REPUTATION_BLACK: "#000003",
   _LOVER_PINK: "#EAB4CC",
-  _FOLKLORE_WHITE: "#f5f1f1;",
+  _FOLKLORE_WHITE: "#f5f1f1",
   _EVERMORE_BROWN: "#CC9D83",
   _MIDNIGHTS_NAVY: "#464D60",
+
+  _LIGHT_ACCENT_COLOR: "#C6D0E1",
+  _DARK_ACCENT_COLOR: "#4F4A8E",
 };
 
 const margin = { top: 90, right: 30, bottom: 90, left: 80 },
