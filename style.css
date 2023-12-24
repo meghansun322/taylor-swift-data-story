@@ -75,26 +75,18 @@ p {
 section#introduction {
   margin: 0 auto;
   font-size: medium;
-
-   .container {
-    padding: 30px;
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  padding-top: 50px;
 
   p {
     color: var(--reputation-black)
   }
-}
+
 }
 
 section#visualizations {
   background-color: var(--background-color);
    position: relative;
-  margin-top: 40%;
 
-  padding-top: 100px;
 }
 
 #scrolly {
@@ -239,7 +231,7 @@ background: linear-gradient(to right, #BDCFB7 0%, #E8C490 26%, #C69AD1 61%, #B2D
 }
 
 .theme-selector-container {
-  padding: 50px 0 30px 0;
+  padding-top: 30px;
   left: 0;
 }
 /* HELPER CLASSES */
@@ -274,4 +266,19 @@ background: linear-gradient(to right, #BDCFB7 0%, #E8C490 26%, #C69AD1 61%, #B2D
 
 .extrabold{
   font-weight: 800;
+}
+
+.scroll-down-text-container {
+  margin: auto;
+  color: var(--primary-color);
+  width: 170px; 
+  text-align: center; 
+
+  .scroll-down-text {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .material-icons {
+    line-height: 0.5 !important;
+  }
 }
